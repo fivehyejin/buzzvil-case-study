@@ -1,0 +1,50 @@
+.reward {
+  display: inline-flex;
+  align-items: center;
+  height: 28px;
+  padding: 0 var(--sp-10);
+  border-radius: var(--r-pill);
+  background: var(--reward-subtle);
+  color: var(--reward-accent);
+  font: var(--t-cta-sm);
+  white-space: nowrap;
+}
+
+.num {
+  font-family: var(--font-num);
+  font-weight: 700;
+  letter-spacing: -0.2px;
+}
+
+.promo {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 var(--sp-6);
+  border-radius: var(--r-3);
+  background: var(--promo-accent);
+  color: var(--text-inverse);
+  font: var(--t-tag);
+  white-space: nowrap;
+}
+
+.count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: var(--r-pill);
+  background: var(--promo-accent);
+  color: var(--text-inverse);
+  font: var(--t-count);
+}
+
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--promo-accent);
+}

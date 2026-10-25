@@ -1,0 +1,25 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-10);
+  height: 230px;
+  text-align: center;
+}
+
+.icon {
+  color: var(--text-tertiary);
+}
+
+.title {
+  font: var(--t-body);
+  line-height: 1;
+  color: var(--text-secondary);
+}
+
+.desc {
+  font: var(--t-caption);
+  line-height: 1;
+  color: var(--text-tertiary);
+}

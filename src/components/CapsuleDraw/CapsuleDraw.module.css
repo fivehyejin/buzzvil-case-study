@@ -1,0 +1,17 @@
+.wrap {
+  border-radius: var(--r-16);
+  background: var(--bg-subtle);
+  overflow: hidden;
+}
+
+.art {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.cta {
+  padding: var(--sp-16);
+  background: var(--bg-default);
+}

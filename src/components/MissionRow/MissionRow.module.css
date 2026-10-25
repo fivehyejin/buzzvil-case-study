@@ -1,0 +1,46 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 17px 0;
+  text-align: left;
+  transition: opacity var(--dur-fast) var(--ease);
+}
+
+.row:active {
+  opacity: 0.6;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-10);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.title,
+.titleDone {
+  font: var(--t-body-m);
+  color: var(--text-secondary);
+}
+
+.titleDone {
+  color: var(--text-tertiary);
+}
+
+.progress {
+  width: 225px;
+  max-width: 100%;
+}
+
+.chev {
+  flex: 0 0 auto;
+  color: var(--text-primary);
+}

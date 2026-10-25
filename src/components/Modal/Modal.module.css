@@ -1,0 +1,96 @@
+.overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--overlay);
+  animation: fade var(--dur) var(--ease);
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  width: 326px;
+  max-width: calc(100% - 2 * var(--sp-32));
+  padding: var(--sp-24);
+  border-radius: var(--r-16);
+  background: var(--bg-default);
+  outline: none;
+  animation: rise var(--dur) var(--ease);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font: var(--t-modal);
+  line-height: 20px;
+  color: var(--text-primary);
+}
+
+.close {
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  margin: -6px -6px -6px 0;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+}
+
+.body strong {
+  font: var(--t-action);
+  line-height: 1.55;
+  color: var(--text-strong);
+}
+
+.body p {
+  font: var(--t-small);
+  color: var(--text-secondary);
+}
+
+.pages {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dot,
+.dotOn {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dot {
+  background: var(--border-default);
+}
+
+.dotOn {
+  background: var(--action-primary);
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+}

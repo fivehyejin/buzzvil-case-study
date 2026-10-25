@@ -1,0 +1,39 @@
+.wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+  width: 100%;
+}
+
+.track {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  gap: var(--sp-2);
+  height: 8px;
+  border-radius: var(--r-pill);
+  overflow: hidden;
+}
+
+.track i {
+  flex: 1 1 0;
+  min-width: 1px;
+  height: 100%;
+  transition: background-color var(--dur) var(--ease);
+}
+
+.empty {
+  background: var(--progress-track);
+}
+
+.filled {
+  background: var(--reward-accent);
+}
+
+.label {
+  flex: 0 0 auto;
+  font: var(--t-counter);
+  color: var(--text-secondary);
+  min-width: 2.5ch;
+  text-align: right;
+}

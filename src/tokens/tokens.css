@@ -1,0 +1,96 @@
+/* ─────────────────────────────────────────────
+   무신사 머니 디자인 토큰
+   근거: spec/design-system.md (Figma 02 파운데이션 보드)
+   관찰값 = 캡처에서 확인 / 제안값 = 작업용 추정
+   ───────────────────────────────────────────── */
+
+:root {
+  /* ── Primitive color ── */
+  --neutral-000: #ffffff;
+  --neutral-050: #f5f5f5;
+  --neutral-150: #e6e6e6;
+  --neutral-200: #e0e0e0;
+  --neutral-500: #888888;
+  --neutral-700: #555555;
+  --neutral-1000: #000000;
+  --blue-500: #4164ff;
+  --blue-050: #e5eafc;
+  --red-500: #f04444; /* 제안 */
+
+  /* ── Semantic color ── */
+  --bg-default: var(--neutral-000);
+  --bg-subtle: var(--neutral-050);
+  --bg-reward-panel: var(--neutral-200);
+  --border-default: var(--neutral-150);
+  --progress-track: var(--neutral-150);
+  --action-primary: var(--neutral-1000);
+  --text-primary: var(--neutral-1000);
+  --text-strong: #111111;
+  --text-secondary: var(--neutral-700);
+  --text-tertiary: var(--neutral-500);
+  --text-inverse: var(--neutral-000);
+  --reward-accent: var(--blue-500);   /* 리워드 값, 완료 진행에만 */
+  --reward-subtle: var(--blue-050);   /* 리워드 배지 면 */
+  --promo-accent: var(--red-500);     /* 프로모 태그, 알림 카운트에만 */
+  --state-disabled: #d9d9d9;          /* 제안 */
+  --overlay: rgba(0, 0, 0, 0.45);     /* 제안 */
+  --art-offer-bg: #fff4cf;            /* 설명용 오퍼 아트 배경 */
+  --art-offer-fg: #eb8b2c;
+
+  /* ── Space (4px 단위) ── */
+  --sp-2: 2px;
+  --sp-4: 4px;
+  --sp-6: 6px;
+  --sp-8: 8px;
+  --sp-10: 10px;
+  --sp-12: 12px;
+  --sp-14: 14px;
+  --sp-16: 16px;
+  --sp-20: 20px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-40: 40px;
+  --sp-48: 48px;
+
+  /* ── Radius ── */
+  --r-3: 3px;    /* 프로모 태그 */
+  --r-4: 4px;    /* 태그 */
+  --r-8: 8px;    /* 소형 버튼, 유틸리티, 툴팁 */
+  --r-12: 12px;  /* Primary CTA, 오퍼 카드 */
+  --r-16: 16px;  /* 패널, 모달 */
+  --r-pill: 999px; /* 리워드 배지, 칩 */
+
+  /* ── Typography ── */
+  --font-kr: "Noto Sans KR", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --font-num: "Inter", var(--font-kr);
+
+  --t-display: 700 28px/36px var(--font-kr);   /* 금액 */
+  --t-heading: 700 20px/28px var(--font-kr);   /* 섹션 제목 */
+  --t-panel:   700 17px/24px var(--font-kr);   /* 앱바·패널 제목 */
+  --t-modal:   700 18px/26px var(--font-kr);
+  --t-action:  700 16px/24px var(--font-kr);   /* Primary CTA */
+  --t-body-b:  700 14px/22px var(--font-kr);
+  --t-body-m:  500 14px/22px var(--font-kr);
+  --t-body:    400 14px/22px var(--font-kr);
+  --t-cta-sm:  700 13px/18px var(--font-kr);   /* Compact CTA, 칩, 리워드 배지 */
+  --t-small:   400 13px/20px var(--font-kr);
+  --t-caption: 400 12px/18px var(--font-kr);
+  --t-counter: 500 12px/18px var(--font-num);  /* 0/3 */
+  --t-micro:   400 11px/17px var(--font-kr);
+  --t-tag:     700 10px/14px var(--font-kr);
+  --t-count:   700 10px/14px var(--font-num);  /* 알림 카운트 */
+
+  /* ── Layout ── */
+  --screen-w: 390px;
+  --gutter: 20px;
+  --content-w: 350px;
+  --appbar-h: 56px;
+
+  /* ── Elevation ── */
+  --shadow-cta: 0 3px 8px rgba(0, 0, 0, 0.25);
+
+  /* ── Motion ── */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur-fast: 120ms;
+  --dur: 200ms;
+}

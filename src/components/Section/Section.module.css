@@ -1,0 +1,41 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-16);
+}
+
+.title {
+  font: var(--t-heading);
+  line-height: 24px;
+  color: var(--text-primary);
+}
+
+/* 가로 스크롤 등 gutter 밖으로 흘리기 */
+.bleed {
+  margin: 0 calc(-1 * var(--gutter));
+  padding: 0 var(--gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.bleed::-webkit-scrollbar {
+  display: none;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+}
+
+.introTitle {
+  font: var(--t-heading);
+  line-height: 29px;
+  color: var(--text-primary);
+}
+
+.introDesc {
+  font: var(--t-body);
+  line-height: 20px;
+  color: var(--text-secondary);
+}

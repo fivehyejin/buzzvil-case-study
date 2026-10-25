@@ -1,0 +1,6 @@
+# Cloudflare Pages 설정
+# 대시보드에서 GitHub 레포 연결 시: Build command `npm run build`, Output directory `dist`
+# 로컬 배포: npx wrangler pages deploy dist --project-name offerwall-proto
+name = "offerwall-proto"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"

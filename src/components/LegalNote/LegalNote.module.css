@@ -1,0 +1,27 @@
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-10);
+  padding: var(--sp-20);
+  background: var(--bg-subtle);
+}
+
+.title {
+  font: var(--t-caption);
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  font: var(--t-micro);
+  color: var(--text-tertiary);
+}
+
+.item::before {
+  content: "• ";
+}

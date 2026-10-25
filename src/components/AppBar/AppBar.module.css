@@ -1,0 +1,31 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--appbar-h);
+  padding: 0 var(--gutter);
+  background: var(--bg-default);
+}
+
+.title {
+  font: var(--t-panel);
+  color: var(--text-primary);
+}
+
+/* 보이는 아이콘 22, 터치 영역 44 */
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 -11px;
+  color: var(--text-primary);
+}
+
+.icon:disabled {
+  visibility: hidden;
+}

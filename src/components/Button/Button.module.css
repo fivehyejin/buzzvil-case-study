@@ -1,0 +1,100 @@
+.base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-6);
+  white-space: nowrap;
+  transition:
+    transform var(--dur-fast) var(--ease),
+    opacity var(--dur-fast) var(--ease),
+    background-color var(--dur-fast) var(--ease);
+  user-select: none;
+}
+
+.base:active:not(:disabled) {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+.base:disabled {
+  background: var(--state-disabled);
+  color: var(--text-tertiary);
+  box-shadow: none;
+}
+
+/* Primary — H56 · R12 */
+.primary {
+  height: 56px;
+  padding: 0 var(--sp-24);
+  border-radius: var(--r-12);
+  background: var(--action-primary);
+  color: var(--text-inverse);
+  font: var(--t-action);
+  box-shadow: var(--shadow-cta);
+}
+
+.block {
+  width: 100%;
+}
+
+/* Compact — W104 · H36 · R8 */
+.compact {
+  min-width: 104px;
+  height: 36px;
+  padding: 0 var(--sp-14);
+  border-radius: var(--r-8);
+  background: var(--action-primary);
+  color: var(--text-inverse);
+  font: var(--t-cta-sm);
+}
+
+/* Utility — 44×44 · 1px 경계 · R8 */
+.utility {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-8);
+  border: 1px solid var(--border-default);
+  background: var(--bg-default);
+  color: var(--text-primary);
+}
+
+.utility:disabled {
+  background: var(--bg-default);
+  opacity: 0.4;
+}
+
+/* Loading dots */
+.loading {
+  pointer-events: none;
+}
+
+.dots {
+  display: inline-flex;
+  gap: 5px;
+}
+
+.dots i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: pulse 900ms infinite var(--ease);
+}
+
+.dots i:nth-child(2) {
+  animation-delay: 150ms;
+}
+.dots i:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+@keyframes pulse {
+  0%,
+  80%,
+  100% {
+    opacity: 0.25;
+  }
+  40% {
+    opacity: 1;
+  }
+}

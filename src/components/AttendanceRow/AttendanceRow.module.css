@@ -1,0 +1,36 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-12);
+  padding: var(--sp-16);
+  border-radius: var(--r-16);
+  background: var(--bg-default);
+}
+
+.icon {
+  flex: 0 0 auto;
+  color: var(--text-tertiary);
+}
+
+.iconDone {
+  flex: 0 0 auto;
+  color: var(--reward-accent);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.title {
+  font: var(--t-body-b);
+  color: var(--text-strong);
+}
+
+.desc {
+  font: var(--t-micro);
+  color: var(--text-tertiary);
+}

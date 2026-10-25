@@ -1,0 +1,30 @@
+.wrap {
+  position: relative;
+  width: 310px;
+  max-width: 100%;
+  padding-bottom: 10px;
+}
+
+.bubble {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  padding: var(--sp-16);
+  border-radius: var(--r-8);
+  background: var(--action-primary);
+  color: var(--text-inverse);
+}
+
+.title {
+  font: var(--t-cta-sm);
+}
+
+.body {
+  font: var(--t-caption);
+  color: var(--text-inverse);
+}
+
+.arrow {
+  position: absolute;
+  bottom: 0;
+}

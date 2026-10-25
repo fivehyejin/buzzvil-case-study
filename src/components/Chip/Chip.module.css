@@ -1,0 +1,35 @@
+.group {
+  display: flex;
+  gap: var(--sp-8);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.group::-webkit-scrollbar {
+  display: none;
+}
+
+.chip,
+.selected {
+  flex: 0 0 auto;
+  padding: 9px var(--sp-16);
+  border-radius: var(--r-pill);
+  font: var(--t-small);
+  line-height: 18px;
+  white-space: nowrap;
+  transition:
+    background-color var(--dur-fast) var(--ease),
+    color var(--dur-fast) var(--ease);
+}
+
+.chip {
+  background: var(--bg-default);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+}
+
+.selected {
+  background: var(--action-primary);
+  border: 1px solid var(--action-primary);
+  color: var(--text-inverse);
+}

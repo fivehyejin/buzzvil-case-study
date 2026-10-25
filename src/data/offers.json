@@ -1,0 +1,6 @@
+[
+  { "id": "o1", "brand": "신한은행", "action": "유튜브 구독하면", "reward": 156, "artWord": "풍성" },
+  { "id": "o2", "brand": "올리브영", "action": "앱 설치하고 첫 구매하면", "reward": 1200, "promo": "오늘만", "artWord": "올영" },
+  { "id": "o3", "brand": "배달의민족", "action": "친구 초대하면", "reward": 300, "artWord": "배민" },
+  { "id": "o4", "brand": "쿠팡플레이", "action": "무료 체험 시작하면", "reward": 2000, "promo": "추가 적립", "artWord": "플레이" }
+]
