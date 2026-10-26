@@ -1,6 +1,15 @@
-# Cloudflare Pages 설정
-# 대시보드에서 GitHub 레포 연결 시: Build command `npm run build`, Output directory `dist`
-# 로컬 배포: npx wrangler pages deploy dist --project-name offerwall-proto
+# Cloudflare Workers (정적 자산) 설정
+#
+# 대시보드 → Workers & Pages → 프로젝트 → Settings → Build:
+#   Build command : npm run build
+#   Deploy command: npx wrangler deploy
+#
+# 로컬 배포: npm run build && npx wrangler deploy
+
 name = "offerwall-proto"
-pages_build_output_dir = "dist"
 compatibility_date = "2026-10-01"
+
+[assets]
+directory = "./dist"
+# SPA: 쿼리 변형 링크(?screen=...)와 새로고침 모두 index.html로
+not_found_handling = "single-page-application"

@@ -24,13 +24,13 @@ npm run build     # dist/
 
 작업 규칙은 `CLAUDE.md` 참고.
 
-## 배포 (Cloudflare Pages)
+## 배포 (Cloudflare Workers · 정적 자산)
 
-1. Cloudflare 대시보드 → Workers & Pages → Create → Pages → Connect to Git → 이 레포 선택
-2. Build command `npm run build`, Build output directory `dist`
+1. Cloudflare 대시보드 → Workers & Pages → Create → Workers → Import a repository → 이 레포 선택
+2. Settings → Build: **Build command `npm run build`**, Deploy command `npx wrangler deploy`
 3. 이후 `main` 푸시마다 자동 배포
 
-로컬에서 직접: `npx wrangler pages deploy dist --project-name offerwall-proto`
+로컬에서 직접: `npm run build && npx wrangler deploy`
 
 ## 디자인 근거
 

@@ -60,7 +60,7 @@ src/proto/             프로토타입 전용 UI (토글 바, 이벤트 로그) 
 
 ## 배포
 
-Cloudflare Pages. GitHub 연결 후 Build `npm run build`, Output `dist`. 또는 `npx wrangler pages deploy dist`.
+Cloudflare Workers (정적 자산, `wrangler.toml`의 `[assets]`). GitHub 연결 프로젝트의 Build 설정: Build command `npm run build`, Deploy command `npx wrangler deploy`. 로컬에서는 `npm run build && npx wrangler deploy`.
 
 ## 흔한 요청 → 어디를 고치나
 
