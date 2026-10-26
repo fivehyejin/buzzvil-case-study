@@ -1,6 +1,59 @@
 [
-  { "id": "o1", "brand": "신한은행", "action": "유튜브 구독하면", "reward": 156, "artWord": "풍성" },
-  { "id": "o2", "brand": "올리브영", "action": "앱 설치하고 첫 구매하면", "reward": 1200, "promo": "오늘만", "artWord": "올영" },
-  { "id": "o3", "brand": "배달의민족", "action": "친구 초대하면", "reward": 300, "artWord": "배민" },
-  { "id": "o4", "brand": "쿠팡플레이", "action": "무료 체험 시작하면", "reward": 2000, "promo": "추가 적립", "artWord": "플레이" }
+  {
+    "id": "g1", "type": "game", "brand": "룰렛", "action": "룰렛 돌리고", "reward": 1,
+    "effort": "10초", "steps": 1, "completionRate": 0.92, "verb": "돌리기", "artWord": "룰렛"
+  },
+  {
+    "id": "g2", "type": "game", "brand": "퀴즈", "action": "퀴즈 풀고", "reward": 1,
+    "effort": "10초", "steps": 1, "completionRate": 0.9, "verb": "풀기", "artWord": "퀴즈"
+  },
+  {
+    "id": "g3", "type": "game", "brand": "뽑기", "action": "캡슐 뽑고", "reward": 1,
+    "effort": "10초", "steps": 1, "completionRate": 0.94, "verb": "뽑기", "artWord": "뽑기"
+  },
+  {
+    "id": "g4", "type": "game", "brand": "출석", "action": "출석 도장 찍고", "reward": 1,
+    "effort": "5초", "steps": 1, "completionRate": 0.95, "verb": "찍기", "artWord": "출석"
+  },
+
+  {
+    "id": "o1", "type": "signup", "brand": "신한은행", "action": "유튜브 구독하면", "reward": 264,
+    "effort": "30초 구독", "steps": 1, "completionRate": 0.61, "verb": "구독하기"
+  },
+  {
+    "id": "o2", "type": "signup", "brand": "올리브영", "action": "앱 가입하면", "reward": 1980,
+    "effort": "1분 가입", "steps": 2, "completionRate": 0.48, "verb": "가입하기"
+  },
+  {
+    "id": "o3", "type": "signup", "brand": "배달의민족", "action": "친구 초대하면", "reward": 300,
+    "effort": "1분 초대", "steps": 2, "completionRate": 0.41, "verb": "초대하기"
+  },
+  {
+    "id": "o4", "type": "install", "brand": "쿠팡플레이", "action": "앱 설치하고 실행하면", "reward": 1500,
+    "effort": "2분 설치", "steps": 2, "completionRate": 0.44, "verb": "설치하기"
+  },
+  {
+    "id": "o5", "type": "signup", "brand": "토스", "action": "계좌 연결하면", "reward": 2500,
+    "effort": "3분 연결", "steps": 3, "completionRate": 0.33, "verb": "연결하기"
+  },
+  {
+    "id": "o6", "type": "install", "brand": "당근", "action": "앱 설치하고 동네 인증하면", "reward": 800,
+    "effort": "2분 설치", "steps": 2, "completionRate": 0.39, "verb": "설치하기"
+  },
+  {
+    "id": "o7", "type": "purchase", "brand": "마켓컬리", "action": "첫 구매하면", "reward": 5000,
+    "effort": "첫 구매", "steps": 4, "completionRate": 0.12, "verb": "구매하기"
+  },
+  {
+    "id": "o8", "type": "signup", "brand": "KB증권", "action": "계좌 개설하고 입금하면", "reward": 10000,
+    "effort": "계좌 개설 + 입금", "steps": 6, "completionRate": 0.04, "verb": "개설하기"
+  },
+  {
+    "id": "o9", "type": "purchase", "brand": "쿠팡", "action": "와우 멤버십 가입하면", "reward": 8000,
+    "effort": "멤버십 가입 + 결제", "steps": 4, "completionRate": 0.09, "verb": "가입하기"
+  },
+  {
+    "id": "o10", "type": "install", "brand": "카카오페이", "action": "앱 설치하고 송금하면", "reward": 3000,
+    "effort": "설치 + 송금", "steps": 3, "completionRate": 0.21, "verb": "설치하기"
+  }
 ]

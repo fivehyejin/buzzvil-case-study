@@ -1,27 +1,36 @@
-import { useCallback, useState } from "react";
-import { Hub } from "@/screens/Hub";
-import { WeeklyMission } from "@/screens/WeeklyMission";
+import { useCallback } from "react";
+import { Entry } from "@/screens/Entry";
+import { Offerwall } from "@/screens/Offerwall";
+import { Hub } from "@/screens/reference/Hub";
+import { WeeklyMission } from "@/screens/reference/WeeklyMission";
+import { ProtoControls } from "@/proto/ProtoControls";
+import { EventLog } from "@/proto/EventLog";
+import { useProtoState } from "@/lib/useProtoState";
 import type { Screen } from "@/lib/types";
 import s from "./App.module.css";
 
 /**
- * 390px 폰 프레임 안에서 화면 전환.
- * 라우터 없이 스택 하나로 — 프로토타입 범위에서 충분.
+ * 390px 폰 프레임 + 프로토타입 컨트롤.
+ * 화면 전환은 상태 하나로 — 진입 → 오퍼월 → (뒤로) 진입.
  */
 export default function App() {
-  const [stack, setStack] = useState<Screen[]>(["hub"]);
-  const current = stack[stack.length - 1];
+  const { state, set } = useProtoState();
 
-  const go = useCallback((sc: Screen) => setStack((st) => [...st, sc]), []);
-  const back = useCallback(() => setStack((st) => (st.length > 1 ? st.slice(0, -1) : st)), []);
+  const go = useCallback((sc: Screen) => set("screen", sc), [set]);
+  const back = useCallback(() => set("screen", "entry"), [set]);
 
   return (
     <div className={s.stage}>
-      <div className={s.phone}>
-        {current === "hub" && <Hub go={go} back={back} />}
-        {current === "weekly" && <WeeklyMission go={go} back={back} />}
+      <ProtoControls state={state} set={set} />
+
+      <div className={s.phone} key={`${state.screen}-${state.cohort}-${state.group}`}>
+        {state.screen === "entry" && <Entry go={go} back={back} entryCopy={state.entryCopy} />}
+        {state.screen === "offerwall" && <Offerwall go={go} back={back} cohort={state.cohort} group={state.group} />}
+        {state.screen === "hub" && <Hub go={go} back={back} />}
+        {state.screen === "weekly" && <WeeklyMission go={go} back={back} />}
       </div>
-      <p className={s.note}>무신사 머니 오퍼월 · 프로토타입 · 390px</p>
+
+      <EventLog />
     </div>
   );
 }

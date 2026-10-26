@@ -3,7 +3,7 @@ import { AppBar, BonusPanel, Intro, LegalNote, MissionList, Modal, Section, type
 import type { NavProps } from "@/lib/types";
 import weekly from "@/data/weekly.json";
 import missionsData from "@/data/missions.json";
-import s from "./Screen.module.css";
+import s from "../Screen.module.css";
 
 export function WeeklyMission({ back }: NavProps) {
   const [missions, setMissions] = useState<Mission[]>(missionsData as Mission[]);

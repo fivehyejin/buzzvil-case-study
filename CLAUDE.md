@@ -26,13 +26,37 @@ npm run build    # dist/ 생성 (tsc 타입체크 포함)
 ## 구조
 
 ```
-spec/            기획 문서 (수정 1순위)
-src/tokens/      tokens.css · 디자인 토큰
-src/components/  디자인 시스템 컴포넌트 (각 폴더: Name.tsx + Name.module.css)
-src/screens/     화면 (Hub, WeeklyMission …) — spec/flows.md와 1:1
-src/data/        목업 데이터 json
-src/lib/         타입, 유틸
+spec/                  기획 문서 (수정 1순위)
+  hypothesis.md        문제정의·가설·검증설계 (확정)
+  flows.md             화면 플로우 + 이벤트 표
+  design-system.md     토큰·컴포넌트 스펙 + 프로토타입에서 결정한 것
+src/tokens/            tokens.css · 디자인 토큰
+src/components/        디자인 시스템 컴포넌트 (각 폴더: Name.tsx + Name.module.css)
+src/screens/
+  Entry.tsx            진입 (무신사 홈 스텁, 진입점 ① 배너)
+  Offerwall.tsx        오퍼월 첫 화면 — 가설이 바꾸는 유일한 화면. 코호트·그룹으로 분기
+  reference/           Figma 06 보드 참고 화면 (허브, 주간 미션) — 가설과 무관
+src/data/
+  offers.json          오퍼 (type·단가·완료율·소요행동·동사)
+  offerwall.json       카피·모듈 설정·필터·유의사항
+src/lib/
+  slots.ts             슬롯 선정 정책 (완료율 상위 → 단가순 3개 → 폴백)
+  track.ts             이벤트 트래킹 (flows.md 이벤트 표와 1:1)
+  useProtoState.ts     토글 상태 ↔ URL 쿼리
+src/proto/             프로토타입 전용 UI (토글 바, 이벤트 로그) — 제품 UI 아님
 ```
+
+## 변형 링크
+
+`?screen=offerwall&cohort=new&group=test` 처럼 쿼리로 특정 변형을 바로 열 수 있다. PDF·슬랙 공유용.
+
+| 변형 | 쿼리 |
+|---|---|
+| 진입 (현행 카피) | `?screen=entry&copy=control` |
+| 진입 (2차안) | `?screen=entry&copy=variant` |
+| 오퍼월 대조군 | `?screen=offerwall&cohort=new&group=control` |
+| 오퍼월 실험군 | `?screen=offerwall&cohort=new&group=test` |
+| 오퍼월 기존 코호트 | `?screen=offerwall&cohort=existing` |
 
 ## 배포
 
@@ -42,8 +66,12 @@ Cloudflare Pages. GitHub 연결 후 Build `npm run build`, Output `dist`. 또는
 
 | 요청 | 수정 위치 |
 |---|---|
-| 미션 문구·개수·진행도 바꾸기 | `src/data/missions.json` |
-| 오퍼 카드 추가 | `src/data/offers.json` |
-| 화면 플로우 바꾸기 | `spec/flows.md` → `src/screens/` |
+| 모듈 헤더·캡션 문구 | `src/data/offerwall.json` → `module` |
+| 진입 카피 (현행/2차안) | `src/data/offerwall.json` → `entry` |
+| 오퍼 추가·단가·완료율 조정 | `src/data/offers.json` |
+| 슬롯 개수·완료율 임계값 | `src/data/offerwall.json` → `module.slotCount / completionTopPct` |
+| 슬롯 선정 규칙 자체 | `src/lib/slots.ts` + `spec/hypothesis.md` 7번 |
+| 실험군 화면 구성 순서 | `spec/flows.md` → `src/screens/Offerwall.tsx` |
+| 이벤트 추가 | `spec/flows.md` 이벤트 표 → `src/lib/track.ts` |
 | 색·간격 바꾸기 | `src/tokens/tokens.css` |
-| 버튼 상태 추가 | `src/components/Button/` + spec 7번 기록 |
+| 버튼 상태 추가 | `src/components/Button/` + `spec/design-system.md` 7번 기록 |

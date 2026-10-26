@@ -16,9 +16,10 @@ import { useFakeAction } from "@/lib/useFakeAction";
 import type { NavProps } from "@/lib/types";
 import hub from "@/data/hub.json";
 import offersData from "@/data/offers.json";
-import s from "./Screen.module.css";
+import s from "../Screen.module.css";
 
-const offers = offersData as Offer[];
+// 참고 화면: 1원 게임 제외한 오퍼만 카드로
+const offers = (offersData as (Offer & { type: string })[]).filter((o) => o.type !== "game").slice(0, 4);
 
 export function Hub({ go }: NavProps) {
   const [opened, setOpened] = useState(false);
