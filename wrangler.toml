@@ -9,6 +9,10 @@
 name = "offerwall-proto"
 compatibility_date = "2026-10-01"
 
+# wrangler deploy 가 배포 전에 직접 빌드 — 대시보드 Build command 설정과 무관하게 동작
+[build]
+command = "npm run build"
+
 [assets]
 directory = "./dist"
 # SPA: 쿼리 변형 링크(?screen=...)와 새로고침 모두 index.html로
