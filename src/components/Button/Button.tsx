@@ -10,7 +10,10 @@ import s from "./Button.module.css";
  *
  * 눌림(pressed) 상태는 원본에 없어 작업용으로 정의: 검정 면 90% 불투명 + scale .98
  */
-type Variant = "primary" | "compact" | "utility";
+/**
+ * mini / miniOutline : W48 · H32 · R8 · 13/700 — 오퍼 행 안의 "받기" / "보기" (52:1844 관찰)
+ */
+type Variant = "primary" | "compact" | "utility" | "mini" | "miniOutline";
 
 type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant;

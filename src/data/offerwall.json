@@ -1,40 +1,36 @@
 {
-  "appBarTitle": "무신사 머니",
-
-  "entry": {
-    "homeTitle": "무신사",
-    "copyControl": "단 한 번에 최대 1만원",
-    "copyVariant": "최대 1만원",
-    "sub": "미션 참여하고 무신사 머니 적립",
-    "cta": "받으러 가기"
+  "appBar": {
+    "title": "무신사머니 포인트 모으기",
+    "subtitle": "버즈빌 제공 서비스"
   },
 
-  "module": {
-    "header": "최대 1만원 중, 지금 바로 받는 것부터",
-    "caption": "짧은 행동으로 바로 적립되는 오퍼예요",
-    "slotCount": 3,
-    "completionTopPct": 0.3,
-    "lookbackDays": 14
+  "shortcuts": [
+    { "key": "daily", "label": "럭키박스" },
+    { "key": "weekly", "label": "주간미션" },
+    { "key": "draw", "label": "행운뽑기" },
+    { "key": "attendance", "label": "적립내역" }
+  ],
+
+  "goalSection": {
+    "title": "1만원까지 모으는 법",
+    "goalCta": "보기",
+    "quickTitle": "지금 바로 받기",
+    "quickCta": "받기"
   },
 
-  "carousel": {
-    "title": "1원 미니게임",
-    "caption": "매일 참여할 수 있어요"
+  "games": {
+    "title": "가볍게 1원 받기"
   },
+
+  "filters": [
+    { "value": "top", "label": "많이받기" },
+    { "value": "subscribe", "label": "구독하기" },
+    { "value": "game", "label": "게임하기" },
+    { "value": "place", "label": "장소찾기" },
+    { "value": "quick", "label": "1분 컷" }
+  ],
 
   "list": {
-    "title": "참여하고 적립",
-    "filters": [
-      { "value": "all", "label": "전체" },
-      { "value": "signup", "label": "가입" },
-      { "value": "install", "label": "설치" },
-      { "value": "purchase", "label": "구매" }
-    ]
-  },
-
-  "legal": [
-    "리워드 지급 조건은 각 오퍼 안내를 확인해 주세요.",
-    "참여 결과에 따라 적립 내역 반영에 시간이 걸릴 수 있어요.",
-    "이벤트 운영 및 지급 기준은 서비스 정책을 따릅니다."
-  ]
+    "cta": "받기"
+  }
 }

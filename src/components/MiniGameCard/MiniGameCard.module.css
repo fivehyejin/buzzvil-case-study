@@ -1,0 +1,62 @@
+.scroller {
+  display: flex;
+  gap: var(--sp-8);
+  height: 64px;
+  padding: 0 var(--gutter);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-8);
+  flex: 0 0 144px;
+  width: 144px;
+  height: 64px;
+  padding: var(--sp-8);
+  border-radius: var(--r-12);
+  background: var(--bg-subtle);
+  text-align: left;
+  transition: transform var(--dur-fast) var(--ease);
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  color: var(--text-primary);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  min-width: 0;
+}
+
+.title {
+  font: var(--t-cta-sm);
+  line-height: normal;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+/* 캐러셀 안 배지는 조금 낮게 */
+.text > :last-child {
+  height: 24px;
+  padding: 0 var(--sp-8);
+  font-size: 12px;
+}

@@ -81,9 +81,9 @@
   --t-count:   700 10px/14px var(--font-num);  /* 알림 카운트 */
 
   /* ── Layout ── */
-  --screen-w: 390px;
+  --screen-w: 375px;
   --gutter: 20px;
-  --content-w: 350px;
+  --content-w: 335px;
   --appbar-h: 56px;
 
   /* ── Elevation ── */

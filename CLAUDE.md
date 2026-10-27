@@ -33,30 +33,16 @@ spec/                  기획 문서 (수정 1순위)
 src/tokens/            tokens.css · 디자인 토큰
 src/components/        디자인 시스템 컴포넌트 (각 폴더: Name.tsx + Name.module.css)
 src/screens/
-  Entry.tsx            진입 (무신사 홈 스텁, 진입점 ① 배너)
-  Offerwall.tsx        오퍼월 첫 화면 — 가설이 바꾸는 유일한 화면. 코호트·그룹으로 분기
-  reference/           Figma 06 보드 참고 화면 (허브, 주간 미션) — 가설과 무관
+  Offerwall.tsx        오퍼월 TO-BE · 완료 0회 · 실험군 — 유일한 화면 (Figma 52:1844)
 src/data/
-  offers.json          오퍼 (type·단가·완료율·소요행동·동사)
-  offerwall.json       카피·모듈 설정·필터·유의사항
+  offers.json          goal / quick / games / list — 문구·금액·난이도·아이콘
+  offerwall.json       앱바·바로가기·섹션 제목·필터·버튼 레이블
 src/lib/
-  slots.ts             슬롯 선정 정책 (완료율 상위 → 단가순 3개 → 폴백)
-  track.ts             이벤트 트래킹 (flows.md 이벤트 표와 1:1)
-  useProtoState.ts     토글 상태 ↔ URL 쿼리
-src/proto/             프로토타입 전용 UI (토글 바, 이벤트 로그) — 제품 UI 아님
+  slots.ts             필터 로직
+  types.ts
 ```
 
-## 변형 링크
-
-`?screen=offerwall&cohort=new&group=test` 처럼 쿼리로 특정 변형을 바로 열 수 있다. PDF·슬랙 공유용.
-
-| 변형 | 쿼리 |
-|---|---|
-| 진입 (현행 카피) | `?screen=entry&copy=control` |
-| 진입 (2차안) | `?screen=entry&copy=variant` |
-| 오퍼월 대조군 | `?screen=offerwall&cohort=new&group=control` |
-| 오퍼월 실험군 | `?screen=offerwall&cohort=new&group=test` |
-| 오퍼월 기존 코호트 | `?screen=offerwall&cohort=existing` |
+화면은 하나뿐이다. 다른 화면을 추가하자는 요청이면 먼저 `spec/flows.md`에 이유를 적는다.
 
 ## 배포
 
@@ -66,12 +52,10 @@ Cloudflare Workers (정적 자산, `wrangler.toml`의 `[assets]`). GitHub 연결
 
 | 요청 | 수정 위치 |
 |---|---|
-| 모듈 헤더·캡션 문구 | `src/data/offerwall.json` → `module` |
-| 진입 카피 (현행/2차안) | `src/data/offerwall.json` → `entry` |
-| 오퍼 추가·단가·완료율 조정 | `src/data/offers.json` |
-| 슬롯 개수·완료율 임계값 | `src/data/offerwall.json` → `module.slotCount / completionTopPct` |
-| 슬롯 선정 규칙 자체 | `src/lib/slots.ts` + `spec/hypothesis.md` 7번 |
-| 실험군 화면 구성 순서 | `spec/flows.md` → `src/screens/Offerwall.tsx` |
-| 이벤트 추가 | `spec/flows.md` 이벤트 표 → `src/lib/track.ts` |
+| 섹션 제목·버튼 레이블·앱바 문구 | `src/data/offerwall.json` |
+| 목표 오퍼 / 지금 바로 받기 3개 / 게임 / 일반 오퍼 내용 | `src/data/offers.json` (goal / quick / games / list) |
+| 오퍼 행에 난이도 숨기기 | 해당 오퍼의 `difficulty` 삭제 |
+| 필터 칩 추가 | `offerwall.json` → `filters` + `src/lib/slots.ts` + `types.ts` FilterValue |
+| 섹션 순서 바꾸기 | `spec/flows.md` → `src/screens/Offerwall.tsx` |
 | 색·간격 바꾸기 | `src/tokens/tokens.css` |
 | 버튼 상태 추가 | `src/components/Button/` + `spec/design-system.md` 7번 기록 |

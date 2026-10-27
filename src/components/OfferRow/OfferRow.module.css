@@ -1,0 +1,50 @@
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-10);
+  width: 100%;
+  border-bottom: 1px solid var(--progress-track);
+}
+
+.quick {
+  height: 66px;
+}
+
+.list {
+  padding-bottom: var(--sp-10);
+}
+
+.last {
+  border-bottom: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.title {
+  font: var(--t-cta-sm);
+  line-height: normal;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 금액만 파랑 — 디자인 시스템 규칙 */
+.reward {
+  color: var(--reward-accent);
+}
+
+.note {
+  font: var(--t-micro);
+  line-height: normal;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

@@ -1,6 +1,0 @@
-[
-  { "id": "m1", "title": "포인트가 와르르 쏟아지는 미션", "done": 0, "total": 2, "reward": 500 },
-  { "id": "m2", "title": "인기 급상승 미션", "done": 0, "total": 3, "reward": 300 },
-  { "id": "m3", "title": "오늘의 추천 브랜드 둘러보기", "done": 1, "total": 3, "reward": 200 },
-  { "id": "m4", "title": "매일 출석하고 보너스 받기", "done": 2, "total": 4, "reward": 100 }
-]

@@ -1,0 +1,83 @@
+.screen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  background: var(--bg-default);
+}
+
+.shortcuts {
+  padding: 0 var(--gutter);
+}
+
+/* ── 목표와 첫 적립: #F5F5F5 · px20 py16 · gap12 ── */
+.goalSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+  padding: var(--sp-16) var(--gutter);
+  background: var(--bg-subtle);
+}
+
+.goalTitle {
+  font: var(--t-modal);
+  line-height: normal;
+  color: var(--text-primary);
+}
+
+.quickTitle {
+  font: var(--t-action);
+  line-height: normal;
+  color: var(--text-primary);
+}
+
+.quickList {
+  display: flex;
+  flex-direction: column;
+  padding: 0 var(--sp-12);
+  border-radius: var(--r-12);
+  background: var(--bg-default);
+}
+
+/* ── 가벼운 게임: border-t · py12 · gap8 ── */
+.games {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  padding: var(--sp-12) 0;
+  border-top: 1px solid var(--progress-track);
+}
+
+.gamesTitle {
+  padding: 0 var(--gutter);
+  font: var(--t-action);
+  line-height: normal;
+  color: var(--text-primary);
+}
+
+/* ── 섹션 경계 8px ── */
+.divider {
+  height: 8px;
+  background: var(--bg-subtle);
+}
+
+/* ── 필터: px20 py16 · gap6 ── */
+.filters {
+  padding: var(--sp-16) var(--gutter);
+}
+
+.filters [role="radiogroup"] {
+  gap: var(--sp-6);
+}
+
+.filters [role="radio"] {
+  padding: var(--sp-8) var(--sp-10);
+}
+
+/* ── 일반 오퍼: px20 pb20 · gap10 ── */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-10);
+  padding: 0 var(--gutter) var(--sp-20);
+}

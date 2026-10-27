@@ -48,6 +48,26 @@
   font: var(--t-cta-sm);
 }
 
+/* Mini — W48 · H32 · R8 · 13/700 (오퍼 행 안) */
+.mini,
+.miniOutline {
+  width: 48px;
+  height: 32px;
+  border-radius: var(--r-8);
+  font: var(--t-cta-sm);
+}
+
+.mini {
+  background: var(--action-primary);
+  color: var(--text-inverse);
+}
+
+.miniOutline {
+  background: var(--bg-default);
+  border: 1px solid var(--state-disabled);
+  color: var(--text-primary);
+}
+
 /* Utility — 44×44 · 1px 경계 · R8 */
 .utility {
   width: 44px;

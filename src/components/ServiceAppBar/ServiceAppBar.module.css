@@ -1,0 +1,47 @@
+.bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 var(--gutter);
+  background: var(--bg-default);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 -11px;
+  color: var(--text-primary);
+}
+
+.spacer {
+  width: 22px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.title {
+  font: var(--t-action);
+  line-height: normal;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.sub {
+  font: var(--t-micro);
+  line-height: normal;
+  color: var(--text-tertiary);
+}
