@@ -40,6 +40,34 @@
   transform: scale(0.92);
 }
 
+/* 누르기 전 강조 — 검정 링이 천천히 퍼짐 + 아주 작은 숨쉬기. 2.4s 주기 */
+.action .btnAttention {
+  animation: beckon 2400ms var(--ease) infinite;
+}
+
+.action .btnAttention:active:not(:disabled) {
+  transform: scale(0.92);
+  animation: none;
+}
+
+@keyframes beckon {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+  }
+  12% {
+    transform: scale(1.06);
+  }
+  45% {
+    transform: scale(1);
+    box-shadow: 0 0 0 9px rgba(0, 0, 0, 0);
+  }
+  46% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
 /* 완료: 리워드 파랑 면 + 체크, 비활성 회색 대신 */
 .action .btnDone:disabled {
   background: var(--reward-accent);
@@ -103,7 +131,8 @@
 @media (prefers-reduced-motion: reduce) {
   .burst .iconWrap,
   .burst .btnDone,
-  .float {
+  .float,
+  .action .btnAttention {
     animation: none;
   }
 }

@@ -20,10 +20,23 @@ type Props = {
   variant?: "quick" | "list";
   last?: boolean;
   done?: boolean;
+  /** 누르기 전 강조 펄스 — "지금 바로 받기" 3개에만. 완료되면 멈춤 */
+  attention?: boolean;
+  /** 펄스 시차 (ms) — 셋이 동시에 뛰지 않게 */
+  attentionDelay?: number;
   onClick?: (o: Offer) => void;
 };
 
-export function OfferRow({ offer, cta, variant = "list", last = false, done = false, onClick }: Props) {
+export function OfferRow({
+  offer,
+  cta,
+  variant = "list",
+  last = false,
+  done = false,
+  attention = false,
+  attentionDelay = 0,
+  onClick,
+}: Props) {
   const [burst, setBurst] = useState(false);
   const prevDone = useRef(done);
 
@@ -53,7 +66,8 @@ export function OfferRow({ offer, cta, variant = "list", last = false, done = fa
       <span className={s.action}>
         <Button
           variant="mini"
-          className={done ? s.btnDone : s.btn}
+          className={done ? s.btnDone : attention ? s.btnAttention : s.btn}
+          style={attention && !done ? { animationDelay: `${attentionDelay}ms` } : undefined}
           onClick={() => onClick?.(offer)}
           disabled={done}
           aria-label={done ? `${offer.title} 완료` : `${offer.title} ${cta}`}

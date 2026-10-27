@@ -62,6 +62,8 @@ export function Offerwall() {
               cta={cfg.goalSection.quickCta}
               variant="quick"
               last={i === quick.length - 1}
+              attention
+              attentionDelay={i * 300}
               done={done.has(o.id)}
               onClick={(offer) => setPicked({ kind: "offer", offer })}
             />
