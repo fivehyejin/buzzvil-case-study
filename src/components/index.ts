@@ -4,7 +4,7 @@ export { Badge, RewardAmount } from "./Badge/Badge";
 export { ChipGroup } from "./Chip/Chip";
 export { Progress } from "./Progress/Progress";
 export { AppBar } from "./AppBar/AppBar";
-export { Shortcuts, type ShortcutKey } from "./Shortcuts/Shortcuts";
+export { Shortcuts, type ShortcutKey, type ShortcutItem } from "./Shortcuts/Shortcuts";
 export { OfferCard } from "./OfferCard/OfferCard";
 export { MissionRow, MissionList, type Mission } from "./MissionRow/MissionRow";
 export { DailyReward } from "./DailyReward/DailyReward";

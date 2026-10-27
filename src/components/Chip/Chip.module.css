@@ -3,6 +3,12 @@
   gap: var(--sp-8);
   overflow-x: auto;
   scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.group:active {
+  cursor: grabbing;
 }
 
 .group::-webkit-scrollbar {

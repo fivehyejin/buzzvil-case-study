@@ -1,3 +1,4 @@
+import { useDragScroll } from "@/lib/useDragScroll";
 import s from "./Chip.module.css";
 
 /**
@@ -15,8 +16,9 @@ type Props<T extends string> = {
 };
 
 export function ChipGroup<T extends string>({ options, value, onChange, ...rest }: Props<T>) {
+  const { ref, handlers } = useDragScroll<HTMLDivElement>();
   return (
-    <div className={s.group} role="radiogroup" aria-label={rest["aria-label"]}>
+    <div ref={ref} className={s.group} role="radiogroup" aria-label={rest["aria-label"]} {...handlers}>
       {options.map((o) => {
         const selected = o.value === value;
         return (

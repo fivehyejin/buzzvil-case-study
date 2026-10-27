@@ -18,6 +18,96 @@
   border-bottom: 0;
 }
 
+/* ── 완료 애니메이션 ── */
+.iconWrap {
+  display: inline-flex;
+  border-radius: var(--r-8);
+  transition: box-shadow var(--dur) var(--ease);
+}
+
+.burst .iconWrap {
+  animation: ring 700ms var(--ease);
+}
+
+.action {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+/* 받기: 눌림을 조금 더 분명하게 */
+.action .btn:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+/* 완료: 리워드 파랑 면 + 체크, 비활성 회색 대신 */
+.action .btnDone:disabled {
+  background: var(--reward-accent);
+  color: var(--text-inverse);
+}
+
+.burst .btnDone {
+  animation: pop 420ms var(--ease);
+}
+
+.float {
+  position: absolute;
+  right: 0;
+  top: -6px;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+  background: var(--reward-subtle);
+  color: var(--reward-accent);
+  font: var(--t-cta-sm);
+  font-family: var(--font-num);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: floatUp 800ms var(--ease) forwards;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-28px);
+  }
+}
+
+@keyframes ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(65, 100, 255, 0.45);
+  }
+  100% {
+    box-shadow: 0 0 0 12px rgba(65, 100, 255, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .burst .iconWrap,
+  .burst .btnDone,
+  .float {
+    animation: none;
+  }
+}
+
 .info {
   display: flex;
   flex-direction: column;

@@ -1,10 +1,35 @@
+/* 오른쪽 가장자리 페이드 — 더 있다는 신호 */
+.wrap {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 28px;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, var(--bg-default));
+}
+
 .scroller {
   display: flex;
   gap: var(--sp-8);
   height: 64px;
   padding: 0 var(--gutter);
   overflow-x: auto;
+  scroll-snap-type: x proximity;
   scrollbar-width: none;
+  cursor: grab;
+  user-select: none;
+}
+
+.scroller:active {
+  cursor: grabbing;
 }
 
 .scroller::-webkit-scrollbar {
@@ -22,6 +47,7 @@
   border-radius: var(--r-12);
   background: var(--bg-subtle);
   text-align: left;
+  scroll-snap-align: start;
   transition: transform var(--dur-fast) var(--ease);
 }
 

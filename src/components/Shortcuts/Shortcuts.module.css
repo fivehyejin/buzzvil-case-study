@@ -18,6 +18,25 @@
   opacity: 0.6;
 }
 
+.iconWrap {
+  position: relative;
+  display: inline-flex;
+  width: 28px;
+  height: 28px;
+}
+
+/* Rewards/Badge/Dot — 6px · 빨강은 알림에만 */
+.dot {
+  position: absolute;
+  top: -2px;
+  right: -4px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--promo-accent);
+  box-shadow: 0 0 0 2px var(--bg-default);
+}
+
 .label {
   font: var(--t-micro);
   line-height: 13px;

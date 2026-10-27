@@ -249,3 +249,12 @@ AppBar("주간 미션")
 | **EntryBanner** | 검정 면 R16 · 카피 20/700 · 흰 pill CTA | 무신사 영역 스텁. 실제 무신사 UI 아님 |
 
 프로토타입 전용 UI(`src/proto/`: 토글 바, 이벤트 로그)는 디자인 시스템 밖. 화면 폭 420px 이하에서는 숨김.
+
+### 추가 결정 (2026-10-27 · 인터랙션)
+
+| 항목 | 결정 | 위치 |
+|---|---|---|
+| 바로가기 알림 | Badge/Dot 6px, 아이콘 우상단 (-2, -4), 흰 2px 테두리. 데이터 `dot: true` | `Shortcuts` |
+| 가로 스크롤 | 터치 기본 + 마우스 드래그(`useDragScroll`), snap proximity, 우측 28px 페이드 | `MiniGameCarousel`, `ChipGroup` |
+| 받기 → 완료 | 버튼이 리워드 파랑 + 체크로 팝(420ms), "+N원" 칩 떠오름(800ms), 아이콘 링(700ms). `prefers-reduced-motion`이면 생략 | `OfferRow` |
+| 받기 눌림 | scale .92 (mini) | `OfferRow` |

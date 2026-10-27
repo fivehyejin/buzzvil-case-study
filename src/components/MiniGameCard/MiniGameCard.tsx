@@ -1,5 +1,6 @@
 import { Badge } from "@/components/Badge/Badge";
 import { OfferIcon } from "@/components/OfferIcon/OfferIcon";
+import { useDragScroll } from "@/lib/useDragScroll";
 import type { Game } from "@/lib/types";
 import s from "./MiniGameCard.module.css";
 
@@ -22,11 +23,14 @@ export function MiniGameCard({ game, onClick }: { game: Game; onClick?: (g: Game
 }
 
 export function MiniGameCarousel({ games, onClick }: { games: Game[]; onClick?: (g: Game) => void }) {
+  const { ref, handlers } = useDragScroll<HTMLDivElement>();
   return (
-    <div className={s.scroller}>
-      {games.map((g) => (
-        <MiniGameCard key={g.id} game={g} onClick={onClick} />
-      ))}
+    <div className={s.wrap}>
+      <div ref={ref} className={s.scroller} {...handlers}>
+        {games.map((g) => (
+          <MiniGameCard key={g.id} game={g} onClick={onClick} />
+        ))}
+      </div>
     </div>
   );
 }

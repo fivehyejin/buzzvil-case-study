@@ -5,9 +5,9 @@
   },
 
   "shortcuts": [
-    { "key": "daily", "label": "럭키박스" },
-    { "key": "weekly", "label": "주간미션" },
-    { "key": "draw", "label": "행운뽑기" },
+    { "key": "daily", "label": "럭키박스", "dot": true },
+    { "key": "weekly", "label": "주간미션", "dot": true },
+    { "key": "draw", "label": "행운뽑기", "dot": true },
     { "key": "attendance", "label": "적립내역" }
   ],
 
